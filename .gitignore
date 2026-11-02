@@ -54,3 +54,4 @@ Thumbs.db
 # Third-party paper PDFs in references/
 references/*.pdf
 papers/*.pdf
+data/raw/
