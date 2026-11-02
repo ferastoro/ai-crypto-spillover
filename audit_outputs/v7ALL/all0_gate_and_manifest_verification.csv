@@ -1,0 +1,10 @@
+Check_ID,Description,Status,Details
+GATE_0.1_README_EXISTS,README.txt exists in results/v7-tuned/,PASS,File exists: True
+GATE_0.2_ACTIVE_STAGE_ALL,README.txt reports Active STAGE = ALL,PASS,Active STAGE: ALL verified
+GATE_0.3_5_SEEDS,"README.txt reports 5 seeds [42, 7, 13, 21, 99]",PASS,"Evaluated seeds [42, 7, 13, 21, 99] verified"
+GATE_0.4_CUTOFFS_335,README.txt reports 335 cutoffs target,PASS,335 cutoffs target verified
+GATE_0.5_MISSING_RUNS_EMPTY,README.txt confirms 0 missing runs,PASS,0 missing runs confirmed (44/44 finished)
+GATE_0.6_STAGE_A_NOT_RUN,README.txt confirms Stage A (untuned) was Not Run in STAGE=ALL,PASS,Stage A Not Run confirmed
+GATE_0.7_CORE_FILES_EXIST,All required core results files exist on disk,PASS,All 11 core files present
+GATE_0.8_MANIFEST_DISK_VERIFICATION,Manifest MD5 checksums match disk files,PASS,139 manifest entries; 0 mismatches; Missing on disk: ['__notebook__.ipynb']
+GATE_0.9_ZIP_INTEGRITY,All manifest files exist in v7_results.zip with identical MD5,PASS,All 138 packaged files match inside zip perfectly (0 discrepancies)

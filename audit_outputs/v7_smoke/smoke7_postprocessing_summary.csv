@@ -1,0 +1,5 @@
+File,Rows,Columns,Status
+v7_evaluation_metrics_summary.csv,10,"['Horizon', 'Model', 'Training_Loss', 'MSE', 'MAE', 'R2_OOS_vs_HistExp', 'Mean_Forecast_Error_Bias', 'Mean_Forecast', 'Forecast_to_Target_Ratio', 'Share_Above_2x_Target_Mean (%)', 'Share_Negative_Forecasts (%)', 'Outlier_Share_Feb5_6 (%)', 'MSE_Without_Feb5_6']",GENERATED
+v7_qlike_rules_comparison.csv,10,"['Horizon', 'Model', 'N_Common_Positive', 'QLIKE_Common_Positive', 'N_Full_Sample', 'QLIKE_Floored_1e-6 (Exploratory)', 'QLIKE_Floored_1e-8 (Exploratory)']",GENERATED
+v7_diebold_mariano_tests.csv,8,"['Horizon', 'Candidate', 'Benchmark', 'MSE_Ratio_vs_HAR', 'Pct_Difference_vs_HAR (%)', 'DM_Stat', 'p_raw', 'm_Bonferroni', 'p_bonf', 'DM_Verdict']",GENERATED
+v7_mcs_results.csv,10,"['Horizon', 'Model', 'MCS_pvalue_MSE', 'In_M90_MSE', 'MCS_pvalue_QLIKE', 'In_M90_QLIKE']",GENERATED

@@ -1,0 +1,4 @@
+Comparison,Cells_Notebook_1,Cells_Notebook_2,Differing_Cells_Count,Differing_Cell_Indices,Status,Verdict
+Downloaded Kaggle Notebook vs Repo Notebook,25,25,0,[],PASS,Identical (0 differences)
+Downloaded Kaggle Notebook vs Zip __notebook__.ipynb,25,25,0,[],PASS,Identical (0 differences)
+Missing Source Copy Explanation,25,25,0,None,PASS,Kaggle interactive execution produced __notebook__.ipynb rather than __notebook_source__.ipynb. Candidate search generated notebook_source_MISSING.txt as intended; __notebook__.ipynb was captured directly into v7_results.zip.

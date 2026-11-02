@@ -1,0 +1,6 @@
+Model_Comparison,Loss_Function,HAC_Lag,HLN_Adjustment,MSE_Model,MSE_Benchmark,Mean_Diff_md,Var_Diff_var_d,Std_Diff,DM_Stat,p_raw,p_bonf (m=12),Negative_Forecast_Pct,Note
+TFT-SPILL vs Hist-Exp (h=1),Squared Error (MSE),0,False,2.388453e-06,2.689342e-06,-3.00889e-07,2.780580e-12,1.667507e-06,-3.3026,0.001,0.0115,0.00%,Significant outperformance due to low loss variance (smooth tracking of target level)
+NBEATSx-SPILL (raw) vs Hist-Exp (h=1),Squared Error (MSE),0,False,2.272067e-06,2.689342e-06,-4.17275e-07,3.458556e-11,5.880948e-06,-1.2987,0.1941,1.0,13.73%,"Loss variance is 12.4x higher than TFT, inflating denominator and reducing t-stat to -1.30"
+NBEATSx-SPILL (clipped >= 0) vs Hist-Exp (h=1),Squared Error (MSE),0,False,2.16212e-06,2.689342e-06,-5.27222e-07,3.333689e-11,5.773811e-06,-1.6713,0.0947,1.0,0.00% (clipped),"MSE improves to 2.162e-6, stat increases to -1.67 (p_raw=0.0947, marginally significant)"
+NBEATSx-SPILL (raw) vs HAR (h=1),Squared Error (MSE),0,False,2.272067e-06,2.234681e-06,3.7387e-08,1.062215e-11,3.259164e-06,0.21,0.8337,1.0,13.73%,"Tie vs HAR (p_raw=0.8266, p_bonf=1.0)"
+NBEATSx-SPILL (clipped >= 0) vs HAR (h=1),Squared Error (MSE),0,False,2.16212e-06,2.234681e-06,-7.2561e-08,9.534962e-12,3.087873e-06,-0.4301,0.6671,1.0,0.00% (clipped),"Clipped MSE 2.162e-6 beats HAR 2.235e-6 in point MSE, but still a statistical Tie (p=0.6277)"

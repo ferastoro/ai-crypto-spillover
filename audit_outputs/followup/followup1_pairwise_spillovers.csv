@@ -1,0 +1,7 @@
+Relationship,Value (%),Table_I_Match
+BTC-USD -> BTC/IDR (Target: BTC/IDR FEV from BTC-USD),30.7825,"Matches GFEVD Matrix Cell [BTC/IDR, BTC-USD]"
+BTC/IDR -> BTC-USD (Target: BTC-USD FEV from BTC/IDR),29.3529,"Matches GFEVD Matrix Cell [BTC-USD, BTC/IDR]"
+5 AI Equities -> BTC-USD (Sum of 5 AI -> BTC-USD),9.164,Matches (9.16%)
+5 AI Equities -> BTC/IDR (Sum of 5 AI -> BTC/IDR),9.001,Matches (9.00%)
+"Cell [SAHAM_NVDA, CRYPTO_BTC_IDR_INDODAX]",2.8215,Matches 2.82% (Misattributed in draft text to BTC/IDR -> BTC-USD)
+Value 16.27%,,no source found

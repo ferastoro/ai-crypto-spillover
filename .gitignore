@@ -1,0 +1,56 @@
+# ==============================================================================
+# RSIC Git Ignore Rules
+# ==============================================================================
+
+# Private manuscripts and reports (distributed separately)
+paper/
+report/
+
+# Temporary workspace & scratch scripts
+scratch/
+results/v7-smoke/
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Checkpoints & logs
+.ipynb_checkpoints/
+.virtual_documents/
+lightning_logs/
+my_logs/
+results/v4/logs/
+
+# Archives & Large Packages
+*.zip
+
+# Virtual environments
+.venv/
+venv*/
+venv_nf/
+env/
+
+# Environment variables, secrets & credentials
+.env
+.env.*
+kaggle.json
+*.key
+
+# OS and Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Model Checkpoints & Large Binaries (> 50 MB)
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Third-party paper PDFs in references/
+references/*.pdf
+papers/*.pdf

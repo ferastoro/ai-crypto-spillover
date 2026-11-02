@@ -1,0 +1,9 @@
+Combo_Idx,v6_StageB_InputSize,v6_StageB_LR,v6_StageB_Loss,v7_ATuned_InputSize,v7_ATuned_LR,v7_ATuned_Loss,Input_Range_Match,LR_Range_Match
+1,20,0.001,MAE,20,0.001,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+2,20,0.001,MSE,20,0.00075,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+3,20,0.0003,MAE,20,0.0005,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+4,20,0.0003,MSE,20,0.0003,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+5,50,0.001,MAE,50,0.001,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+6,50,0.001,MSE,50,0.00075,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+7,50,0.0003,MAE,50,0.0005,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"
+8,50,0.0003,MSE,50,0.0003,MSE,"[20, 50] matches [20, 50]","[3e-4, 1e-3] matches [3e-4, 1e-3]"

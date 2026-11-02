@@ -1,0 +1,11 @@
+project-excludes = [
+    "**/venv*",
+    "**/.venv",
+    "**/__pycache__",
+    "**/.ipynb_checkpoints",
+    "**/results-*",
+    "**/data_raw",
+    "**/papers",
+]
+python-interpreter = "/Users/admin/venvs/venv_nf/bin/python"
+

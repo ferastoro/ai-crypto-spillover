@@ -1,0 +1,5 @@
+Panel,m_size,Hypotheses_Tested,Alpha_Nominal,Alpha_Adjusted,Critique
+Current Panel A: DL Models vs Classical Baselines,12,"4 DL models (TFT-SPILL, TFT-NOSPILL, NBX-SPILL, NBX-NOSPILL) x 3 Baselines (Hist-Exp, Roll-20, HAR)",0.05,0.004167,Ad hoc partitioning: separates ablation from baseline benchmarks
+Current Panel B: Ablation SPILL vs NOSPILL,2,"2 comparisons (TFT-SPILL vs TFT-NOSPILL, NBX-SPILL vs NBX-NOSPILL) per horizon",0.05,0.025,Restricted family artificially boosts power for ablation test relative to Panel A
+Unified Benchmark Family (All vs HAR Benchmark),8,8 candidate models vs HAR benchmark per horizon,0.05,0.00625,Standard Dunnett/many-to-one benchmark family
+Full Pairwise Family (All-Pairs),36,All 9x8/2 = 36 pairwise model comparisons,0.05,0.001389,Conservative Bonferroni for all pairs; overcome by Model Confidence Set (MCS)

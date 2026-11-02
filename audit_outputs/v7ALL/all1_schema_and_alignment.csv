@@ -1,0 +1,6 @@
+Component,Expected_Count,Actual_Count,Status,Notes
+Logs (Validation Curves),84,84,PASS,40 tuning curves + 20 A_TUNED winner curves + 24 B block curves
+Exp A_TUNED Partials,20,20,PASS,"4 configs x 5 seeds [42, 7, 13, 21, 99]"
+Exp B Partials,24,24,PASS,4 configs x 6 refit blocks (seed 42)
+A_TUNED Partials Schema,20,20,PASS,"All 20 files contain exactly 3,350 rows (335 cutoffs x 10 horizons)"
+Ensemble Predictions,26800,26800,PASS,"8 configs x 3,350 rows = 26,800 rows. Stages: ['A_TUNED', 'B']"

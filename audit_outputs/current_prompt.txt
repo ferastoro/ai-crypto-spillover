@@ -1,0 +1,86 @@
+<USER_REQUEST>
+@[/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-smoke] @[/Users/admin/Developer/coding_backup/SEM 5/RSIC/notebooks/08-dl-v7-audit-loss-refit.ipynb] 
+Read-only audit of the v7 STAGE="ALL" results (A_TUNED then B). Assume the downloaded package is in results/v7-tuned/ (zip or unzipped; if elsewhere, find it and say so) and the Kaggle notebook I downloaded is next to it. Do NOT edit or overwrite any existing file, including notebooks/, results/v6, results/v7-a, results/v7-smoke and inputs/. Write findings to audit_outputs/audit_v7_ALL_results.md and save every table as CSV in audit_outputs/v7ALL/. For each item give PASS / FAIL / UNVERIFIED with the file, cell and line (or script) used. Report values only; no causal language; "matches / doesn't match / better / worse / tie" only.
+
+Rule for the whole audit: every number in the report must be read from a file at run time. No literal or placeholder values typed into any script (a previous audit script hardcoded a ratio and it ended up in a table). If you must use a constant, say so and why. List every script you wrote and grep them for numeric literals used as results; report any you find.
+
+0. Gate (stop with a one-line verdict if any check fails)
+   - README.txt shows Active STAGE = ALL, 5 seeds [42, 7, 13, 21, 99], 335 cutoffs, max_steps / val_check_steps / patience as designed (NBEATSx tuning and winners: val_check_steps 5, patience 25 checks; TFT: 25 and 5), and "Missing Runs" empty. Anything else (SMOKE, fewer seeds, a stopped budget guard, "Partial Seed Ensembles" not empty) = FAIL.
+   - Expected runs present: A_TUNED grid (NBEATSx 12 combos x seeds 42 and 7, TFT_MAE 8 combos x seeds 42 and 7), 5-seed winners for NBEATSx_MSEtuned and TFT_MAEtuned (SPILL and NOSPILL), and Experiment B (TFT with its v6 loss, NBEATSx with its v6 loss, SPILL and NOSPILL, 6 blocks). Discover the actual config names from the files and list them. Every ensemble = 3350 rows (335 cutoffs x 10 horizons).
+   - Stage A (untuned) must NOT have been re-run in this package; if it was, say so.
+
+1. Integrity
+   - manifest.csv md5 for every file on disk including README.txt; zip contents vs manifest; list missing and extra files. run_log.csv, logs/, a_tuned_grid_evaluation.csv and best-hyperparameters JSON must exist.
+   - No NaN, no duplicated (cutoff, h); cutoff and real_date ranges identical to results/v6/v6_ensemble_predictions.csv.
+   - Each 5-seed ensemble equals the mean of its five seed files per (cutoff, h) (max abs diff). Config names must not carry a "partial" suffix.
+   - Notebook: diff the code cells (source only) of the Kaggle notebook I downloaded against notebooks/08_dl_v7_audit_loss_refit.ipynb and list every substantive difference. Confirm that STAGE, MAX_RUNTIME_HOURS, RUN_TFT_MAE_TUNED and the grids in the executed notebook are the ones in README.txt.
+   - Inputs: list the exact input files the notebook read on Kaggle (paths from the log) and their md5 against inputs/v5 and results/v6. In particular, confirm that v6_ensemble_predictions.csv (md5 cce9ec2cbe7f73950ff812a64c4c23fd) was found, and that HAR, GARCH, EGARCH, Roll-20, Hist-Exp and the v6 ensembles appear as rows in v7_evaluation_metrics_summary.csv and in the DM and MCS tables.
+
+2. Tuning (A_TUNED)
+   - Print the full grid table per model: combo, input_size, lr, loss, val MSE for each tuning seed, 2-seed mean, best step, stop step, val forecast/target ratio and ratio_flag. Print the v6 Stage B NBEATSx and TFT tables side by side (read from results/v6/v6_tuning_log.csv).
+   - Winner per model and feature set. Is it on the grid edge (input 100 or lr 1e-4 for NBEATSx; input 20 or lr 1e-3 for TFT)? Give the 2-seed mean val MSE gap between the winner and the runner-up, and between the best MSE-trained NBEATSx combo and the v6 NBEATSx MAE winner (NBEATSx_cfg3, val MSE 1.7727e-06), on the same validation rows.
+   - Selection used validation rows only: show the assert and confirm no test date (>= 2025-04-24) enters tuning.
+   - Flag every combo whose val ratio is above 2x or below 0.5x.
+   - Confirm the 5-seed final runs use the winner's hyperparameters read from the JSON, with the same val_check_steps and patience as the tuning.
+
+3. Training behavior (all 20 final runs plus Experiment B runs; logs for every seed this time)
+   - Per run: best step, stop step, val loss at best step, train loss at best step, fits count (must be 1), checksum before/after, share of negative predictions per horizon. Flag runs whose best step is the first or last validation check, and runs that stopped at max_steps.
+   - Confirm from the logs or the model config that the loss used is MSE for NBEATSx_MSEtuned, MAE for TFT_MAEtuned, and the v6 losses in Experiment B.
+   - Seeds 7, 13, 21, 99 must have log files this time. List any that are missing.
+
+4. Experiment B (60-day expanding refit)
+   - Print the refit origins, training rows per origin, and cutoffs per block. Blocks must cover all 335 cutoffs exactly once, no gap or overlap. Confirm that each prediction used only data up to its block's origin (the asserts exist and fire on a bad case; point to the negative-test cell).
+   - Block 1 (original fit origin): compare with the matching v6 seed-42 predictions for the same cutoffs; report max abs difference and correlation. Say if differences are expected (GPU nondeterminism) or not.
+   - Note how many seeds Experiment B has (seed 42 only expected).
+
+5. Independent recomputation (merge on (cutoff, real_date), never on ds alone)
+   - MSE, MAE, R2_OOS (vs Hist-Exp) and QLIKE at h=1 and h=10 for all new ensembles, next to HAR, GARCH, EGARCH, Roll-20, Hist-Exp, the four v6 ensembles, and the four untuned v7-a ensembles (read from results/v7-a). Compare with what the notebook printed (flag differences above 1e-10) and reproduce the paper's baselines: HAR 2.234681e-06 / 2.439743e-06, Hist-Exp 2.690e-06 / 2.686e-06.
+   - Per-seed MSE table (min, max, mean, std) per config and horizon, and in how many of the 8 config-horizon pairs the seed interval contains HAR's MSE (same as v6 Table 7), and which seeds beat HAR.
+   - Bias (mean forecast error), mean forecast / mean target ratio, share of forecasts above 2x the target mean, and share of negative forecasts, per config and horizon, labelled with the training loss.
+   - QLIKE: report (i) on the common subset where all models are positive (print N), (ii) floored at 1e-6 and (iii) at 1e-8, side by side. Label every QLIKE table "exploratory".
+   - Share of total squared error from 2026-02-05/06 at h=1 and MSE without those two days, per config.
+
+6. Tests (print m next to every result)
+   - DM (HLN, HAC lag h-1) on MSE for each new ensemble vs HAR, Roll-20 and Hist-Exp, Bonferroni with m stated: the paper's family (m=12 per horizon) and the extended family (all new configs x 3 baselines x 2 horizons). Next to each DM show the MSE ratio vs HAR and the raw p.
+   - Pairwise, same model and feature set and horizon: tuned vs untuned v7-a, tuned vs v6 original, and v6 original vs untuned. m stated.
+   - SPILL vs NOSPILL within each new config and horizon, with and without 2026-02-05/06, m = 4 per model.
+   - Experiment B: TFT_REFIT vs the v6 TFT single fit, NBEATSx_REFIT vs the v6 NBEATSx single fit, each vs HAR; m stated.
+   - MCS (arch, alpha 0.10, 5000 reps, seed 42) over all DL configs (v6, v7-a, v7 tuned, Experiment B) plus HAR, GARCH, EGARCH, Roll-20, Hist-Exp, on MSE; and on QLIKE over the common-positive subset. State which configs are excluded from QLIKE. Compare with audit_outputs/task7_mcs_results.csv and audit_outputs/followup/followup3_mcs_qlike_7models.csv.
+
+7. Direct questions, each with the number and file behind it
+   a) Does NBEATSx trained with MSE and tuned on the wider grid get below the v6 NBEATSx (MAE) validation MSE of 1.7727e-06? And on the test period: does its MSE ratio vs HAR improve vs untuned v7-a (2.6x at h=1, 3.6x at h=10)?
+   b) Does the overshoot (mean forecast / mean target 2.1-2.5x in v7-a) disappear after tuning?
+   c) Does any new config have lower MSE than HAR at h=1 or h=10, and is it significant after Bonferroni?
+   d) Does TFT_MAEtuned differ from untuned TFT_MAE (v7-a) and from v6 TFT (MSE loss)?
+   e) Does 60-day refit change a model's MSE vs its single-fit version by more than the seed spread seen in v6 or v7-a?
+   f) Does SPILL vs NOSPILL stay a tie in every new config (also without the two Feb days)?
+   g) Does any config enter or leave the MCS compared with the v6 and v7-a MCS?
+   h) Does the NBEATSx MSE-loss grid winner sit on the boundary, and what is the 2-seed val MSE difference with the interior best?
+
+8. Comparability warnings
+   - List every difference from v6 and v7-a that affects comparisons: NBEATSx val_check_steps 5 vs 25 (same patience in steps), 2-seed tuning vs v6's 2-seed tuning, different grids, number of fits, seeds in Experiment B, Kaggle dataset used. Flag any statement in audit_outputs/SUMMARY.md, audit_v7A_results.md or the paper draft that these results contradict or change.
+
+9. Reproducibility trace
+   - For every number in the report: script, input files, commit hash. If scripts or results are uncommitted, say so.
+
+At the end give: a one-line verdict per experiment (A_TUNED valid / invalid / partially valid; B the same), the blocking issues, the non-blocking issues, and the list of numbers that are safe to put in the paper, each marked with table and row, and a separate list of numbers that must NOT be cited and why.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-30T18:42:45+08:00.
+
+The user's current state is as follows:
+Active Document: /Users/admin/Developer/coding_backup/SEM 5/RSIC/audit_outputs/followup/kaggle-audit-v7-all.ipynb (LANGUAGE_UNSPECIFIED)
+Other open documents:
+- /Users/admin/Developer/coding_backup/SEM 5/RSIC/audit_outputs/followup/kaggle_refit_60days_expanding.py (LANGUAGE_UNSPECIFIED)
+- /Users/admin/Developer/coding_backup/SEM 5/RSIC/notebooks/08-dl-v7-audit-loss-refit.ipynb (LANGUAGE_UNSPECIFIED)
+- /Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v6/v6_ensemble_predictions.csv (LANGUAGE_UNSPECIFIED)
+- /Users/admin/Developer/coding_backup/SEM 5/RSIC/audit_outputs/followup/followup5_reproducibility_trace.csv (LANGUAGE_UNSPECIFIED)
+- /Users/admin/Developer/coding_backup/SEM 5/RSIC/audit/run_audit_v7A_followup.py (LANGUAGE_UNSPECIFIED)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-smoke] is a [Directory]:
+/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-smoke
+@[/Users/admin/Developer/coding_backup/SEM 5/RSIC/notebooks/08-dl-v7-audit-loss-refit.ipynb] is a [File]:
+/Users/admin/Developer/coding_backup/SEM 5/RSIC/notebooks/08-dl-v7-audit-loss-refit.ipynb
+</ADDITIONAL_METADATA>

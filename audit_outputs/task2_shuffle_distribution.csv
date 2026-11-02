@@ -1,0 +1,4 @@
+Metric,Real_Observed,Shuffle_Mean,Shuffle_Std,Shuffle_P5,Shuffle_Median,Shuffle_P95,Empirical_p_value,Conclusion
+Total Spillover Index (TSI Mean %),38.7415,16.8298,0.4653,16.155,16.767,17.6132,0.0,Highly significant (p < 0.005); real connectedness is ~5x higher than random noise
+BTC-USD -> BTC/IDR GFEVD Share (%),30.7825,2.2886,0.3828,1.7401,2.2343,2.9635,0.0,Highly significant (p < 0.005); imported variance is far above noise level (~1%)
+BTC/IDR -> BTC-USD GFEVD Share (%),29.3529,2.3531,0.3902,1.8033,2.3107,3.0842,0.0,Highly significant (p < 0.005); domestic feedback exceeds random baseline (~1%)

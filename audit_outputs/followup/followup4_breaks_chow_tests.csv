@@ -1,0 +1,4 @@
+Series,Chow_F_2025_08_01,Chow_p_2025_08_01,Chow_F_2025_11_10,Chow_p_2025_11_10,Bai_Perron_Breaks,Alignment_with_Regulatory_Dates
+r_t^2 (Realized Volatility),2.7865,0.0952,1.2389,0.2658,"2021-06-28, 2022-11-14, 2025-04-23",No (Captures 2021 bull market & 2022 crypto winter)
+log(r_t^2) (Log Realized Volatility),2.1729,0.1407,0.8078,0.3689,"2021-01-04, 2022-07-29, 2023-10-19",No (Captures macro market cycles)
+Indodax Premium ln(BTCIDR) - ln(BTCUSD) - ln(USDIDR),4.8799,0.0273,7.2958,0.007,"2021-06-23, 2023-11-07, 2025-04-09",Partial (Detects structural narrowing in 2025-04)

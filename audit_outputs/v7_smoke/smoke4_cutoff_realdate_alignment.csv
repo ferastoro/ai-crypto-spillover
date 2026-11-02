@@ -1,0 +1,4 @@
+Smoke_Cutoff_Index,Smoke_Cutoff,Smoke_Real_Date,v6_Cutoff,v6_Real_Date,Cutoff_Match,Real_Date_Match
+0,2023-08-15,2025-04-24,2023-08-24,2025-04-24,False,True
+1,2023-08-16,2025-04-25,2023-08-24,2025-04-25,False,True
+2,2023-08-17,2025-04-28,2023-08-24,2025-04-28,False,True

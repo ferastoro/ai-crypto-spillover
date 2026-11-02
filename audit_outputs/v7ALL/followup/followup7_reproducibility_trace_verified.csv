@@ -1,0 +1,10 @@
+Item,Value,Description
+Active Git Commit Hash,fe09ac640ae43f0b7d0934065cc68c560045e9c6,Main branch commit SHA-1
+Python Executable,/Users/admin/miniconda3/bin/python3,Environment Python interpreter
+HAR h=1 Input File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/inputs/v5/har_preds_T0_h1_v2.csv,Full 335 target rows
+HAR h=10 Input File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/inputs/v5/har_preds_T0_h10_v2.csv,Full 335 target rows
+v6 Predictions File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v6/v6_ensemble_predictions.csv,13400 predictions (4 configs x 335 cutoffs x 10 horizons)
+v7 Predictions File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-tuned/v7_ensemble_predictions.csv,26800 predictions (8 configs x 335 cutoffs x 10 horizons)
+v6 Tuning Log File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v6/v6_tuning_log.csv,Validation log containing NBEATSx_cfg3 1.772739e-06
+v7 Grid Evaluation File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-tuned/a_tuned_grid_evaluation.csv,Validation grid evaluation containing cfg8 2.575003e-06
+Manifest File,/Users/admin/Developer/coding_backup/SEM 5/RSIC/results/v7-tuned/manifest.csv,138 verified files with exact MD5 match

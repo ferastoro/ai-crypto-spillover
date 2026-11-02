@@ -1,0 +1,5 @@
+Check,File,Required,Actual,Status
+STAGE,results/v7-a/README.txt,A or ALL,A,PASS
+Exp_A_Partials_Count,results/v7-a/,20 files (4 configs x 5 seeds),20 files,PASS
+Partial_Row_Counts,results/v7-a/v7_expA_partial_*.csv,3350 rows (335 cutoffs x 10 horizons),"min=3350, max=3350",PASS
+Ensemble_Row_Count,results/v7-a/v7_ensemble_predictions.csv,13400 rows (4 configs x 3350),13400 rows,PASS

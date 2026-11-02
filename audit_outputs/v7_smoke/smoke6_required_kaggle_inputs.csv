@@ -1,0 +1,7 @@
+Filename,Repo_Location,Size_Bytes,MD5,Kaggle_Target_Location,Required_By
+dataset_deep_learning.csv,data/clean/dataset_deep_learning.csv,461918,ba64297407f9d8221488b4815a12ce8c,/kaggle/input/datasets/ferastoro/ai-stocks-crypto-and-ihsg/data_clean/dataset_deep_learning.csv,Cell 6 (Main Dataset)
+tvp_var_dynamic_features_causal.csv,inputs/v5/tvp_var_dynamic_features_causal.csv,310629,066ad3cdf980cd187a79c25dc210f1b2,/kaggle/input/datasets/ferastoro/spillover-v5-inputs/rsic-v5-inputs/tvp_var_dynamic_features_causal.csv,Cell 6 (Causal Spillover Features)
+har_preds_T0_h1_v2.csv,inputs/v5/har_preds_T0_h1_v2.csv,55471,e340a7ba8effd60c8c6d7b85b073aded,/kaggle/input/datasets/ferastoro/spillover-v5-inputs/rsic-v5-inputs/har_preds_T0_h1_v2.csv,Cell 20 (HAR h=1 Benchmark & Targets)
+har_preds_T0_h10_v2.csv,inputs/v5/har_preds_T0_h10_v2.csv,55470,43baf149f5f60be52a80b962ab93e481,/kaggle/input/datasets/ferastoro/spillover-v5-inputs/rsic-v5-inputs/har_preds_T0_h10_v2.csv,Cell 20 (HAR h=10 Benchmark & Targets)
+GARCH_Predictions_V4.csv,inputs/v5/GARCH_Predictions_V4.csv,284349,5e84fa827fd5cfd13bea445230daf2ee,/kaggle/input/datasets/ferastoro/spillover-v5-inputs/rsic-v5-inputs/GARCH_Predictions_V4.csv,Cell 20 (GARCH/EGARCH Benchmarks)
+v6_ensemble_predictions.csv,results/v6/v6_ensemble_predictions.csv,1186169,9e1bdd958db2414afed2c045773d0d78,/kaggle/input/datasets/ferastoro/rsic-v6-results/v6_ensemble_predictions.csv,Cell 20 (v6 Baseline Comparison for DM & MCS)

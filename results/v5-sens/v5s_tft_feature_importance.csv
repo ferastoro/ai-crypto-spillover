@@ -1,0 +1,21 @@
+feature,mean_importance,n_cutoffs,extraction_path,window_represented
+tvp_tsi,0.22617117,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_crypto_eth_usd,0.09891962,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_saham_msft,0.0968939,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_crypto_btc_usd,0.09496925,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_saham_googl,0.06447084,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_saham_tsla,0.045082048,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_saham_meta,0.033844877,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_saham_nvda,0.033239413,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+net_spill_crypto_eth_usd,0.027446732,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+is_monday,0.027277775,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+spillover_ai_to_btcidr,0.027103202,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_saham_nvda,0.026537113,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_crypto_btc_usd,0.022094933,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_saham_googl,0.02090497,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_saham_tsla,0.017594209,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+gap_days,0.016933072,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+crypto_btc_usd_weekend_return,0.016221132,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_saham_msft,0.015855916,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+ret_saham_meta,0.015330932,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50
+is_ihsg_holiday,0.011917062,1,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",window_terakhir_train_val_input_size_50

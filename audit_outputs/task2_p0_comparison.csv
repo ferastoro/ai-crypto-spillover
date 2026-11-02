@@ -1,0 +1,3 @@
+Specification,TSI_Mean (%),TSI_Min (%),TSI_Max (%),BTC_USD_to_BTC_IDR (%),BTC_IDR_to_BTC_USD (%),SAHAM_NVDA_col_BTC_IDR (%),Description
+"Baseline TVP-VAR (p=1, H=10)",38.7415,21.8882,88.9646,30.7825,29.3529,2.8215,Includes both contemporaneous covariance and autoregressive lag propagation
+"Static / Intercept-Only TVP-VAR (p=0, H=10)",35.1707,19.2191,59.1129,31.6384,30.3227,1.68,Purely instantaneous covariance connectedness; no lag propagation (Phi_h = 0 for h >= 1)

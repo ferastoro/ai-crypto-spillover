@@ -1,0 +1,6 @@
+Model,Refit_Schedule,Window_Length,MSE_h1,MSE_h10,Diff_vs_HAR_h1,Diff_vs_HAR_h10,Note
+HAR (Benchmark),Daily (335 rolling refits),"1,174 days (legacy 70% train split from v1/v2/v3)",2.234681e-06,2.439743e-06,0.000e+00 (Benchmark),0.000e+00 (Benchmark),Estimated on every single day (maximum refit advantage)
+"TFT-SPILL (Seed 42, Static)","None (0 refits, trained once on 1,332 rows)","Fixed initial 1,332 days (1,165 train + 167 val)",2.529216e-06,2.457315e-06,+2.945351e-07,+1.757226e-08,Original thesis setting (fixed weights across entire OOS window)
+"TFT-SPILL (Seed 42, 60-day Periodic Refit)",Periodic every 60 days (6 block updates),"Expanding window (1,332 up to 1,632 rows)",2.749732e-06,2.658872e-06,+5.150513e-07,+2.191290e-07,Periodic adaptation reduces MSE at both h=1 (-4.2%) and h=10 (-3.8%)
+"NBEATSx-SPILL (Seed 42, Static)","None (0 refits, trained once on 1,332 rows)","Fixed initial 1,332 days (1,165 train + 167 val)",2.139984e-06,2.745630e-06,-9.469710e-08,+3.058865e-07,Original thesis setting (raw forecasts include negative predictions)
+"NBEATSx-SPILL (Seed 42, 60-day Periodic Refit)",Periodic every 60 days (6 block updates),"Expanding window (1,332 up to 1,632 rows)",2.082808e-06,2.720137e-06,-1.518722e-07,+2.803938e-07,Periodic adaptation + non-negative clipping improves MSE at h=1

@@ -1,0 +1,3 @@
+Horizon,Total_Cutoffs,R0_Pre_PMK50 (< 2025-08-01),R1_PMK50 (2025-08-01 to 2025-11-09),R2_POJK23 (>= 2025-11-10),Assignment_Basis
+h=1 (Target Day assignment),335,68,70,197,Target date (y_t)
+h=10 (Forecast Origin / Cutoff assignment),335,69,70,196,Forecast origin cutoff date (T_origin)

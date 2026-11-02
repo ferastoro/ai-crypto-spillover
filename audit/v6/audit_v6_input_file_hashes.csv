@@ -1,0 +1,13 @@
+filepath,md5,size_bytes
+v6_outputs/v6_outputs.zip,f7bb11ddeb0a381591029ff432d7233d,825677
+v6/deep-learning-spillover-v6-seeds.ipynb,664d94371e42926d8db6e5b9f0c0b30d,543034
+v6/README.md,8f896ab946eeeb6e681aa115516f974f,14797
+rsic-v5-inputs/CV_Predictions_V4.csv,6251bfb6ce543ffcd746e5fab98c3a63,503741
+rsic-v5-inputs/GARCH_Predictions_V4.csv,5e84fa827fd5cfd13bea445230daf2ee,284349
+rsic-v5-inputs/har_preds_T0_h1_v2.csv,e340a7ba8effd60c8c6d7b85b073aded,55471
+rsic-v5-inputs/har_preds_T0_h10_v2.csv,43baf149f5f60be52a80b962ab93e481,55470
+rsic-v5-inputs/tvp_var_dynamic_features_causal.csv,066ad3cdf980cd187a79c25dc210f1b2,310629
+rsic-v5-inputs/dataset_deep_learning.csv,ba64297407f9d8221488b4815a12ce8c,461918
+rsic-v5-inputs/v5_helpers.py,bdd7bf54c3cca56f30a7a1cd779f65b1,13293
+results-v5/v5_metrics_table.csv,6cd74164a9600f6c272901abfc70af30,4682
+results-v5-sens/v5s_metrics_table.csv,c411f51ef70eb9305ead0484bdf13aa0,3844

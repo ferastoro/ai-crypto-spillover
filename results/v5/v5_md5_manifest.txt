@@ -1,0 +1,11 @@
+v5_dm_table.csv                      | Size: 6373       | MD5: 6c471f97b57b540fd860e3c5fa488fb8
+v5_metrics_table.csv                 | Size: 4682       | MD5: 6cd74164a9600f6c272901abfc70af30
+v5_outputs.zip                       | Size: 214815     | MD5: d2d08ca49d7e7c73cd9dce33cb5c31f0
+v5_partial_NBEATSx_NOSPILL_T0_5bf64b8d.csv | Size: 228361     | MD5: 89478c142106b60d9c8f0b97fe782ef2
+v5_partial_NBEATSx_SPILL_T0_91698e36.csv | Size: 228364     | MD5: 77830ccad872e21e6c9c2527fee8e594
+v5_partial_NBEATSx_VOLX_T0_02770f1b.csv | Size: 228463     | MD5: ed97d5f8836e41a9fb608ae275c8ac8d
+v5_partial_TFT_NOSPILL_T0_fc2d05db.csv | Size: 228211     | MD5: 3cca9e0eaab673483fea5fbe2d3513d4
+v5_partial_TFT_SPILL_T0_587d9571.csv | Size: 228511     | MD5: c4a1ed901fe6b720557eef13e2baa12e
+v5_partial_TFT_VOLX_T0_d2f5d524.csv  | Size: 228720     | MD5: 458136dc50e4c98dc65c091ee1d11db2
+v5_pip_freeze.txt                    | Size: 18131      | MD5: fbba8adec4ca6b368bae913e20fcf2c3
+v5_tft_feature_importance.csv        | Size: 3048       | MD5: e182bf535927252f49264a002f64c037

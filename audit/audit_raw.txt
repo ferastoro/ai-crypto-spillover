@@ -1,0 +1,126 @@
+## 2. TVP-VAR (input volatilitas)
+Transform code snippet found:
+```python
+  > **Catatan Metodologi:** Antonakakis et al. (2020) mengusulkan penggunaan TVP-VAR dengan *forgetting factors* (diadopsi dari Koop & Korobilis, 2014) untuk mengatasi batasan ukuran *rolling-window* yang acak pada metode Diebold-Yilmaz (2012) klasik, sekaligus menghindari *curse of dimensionality* pada VAR berukuran besar.
+- **Diebold, F. X., & Yilmaz, K. (2012).** *Better to give than to receive: Predictive directional measurement of volatility spillovers.* International Journal of Forecasting, 28(1), 57-66. (Untuk kerangka dasar Spillover Index / Generalized FEVD).
+```
+Transform code snippet found:
+```python
+print("Distribusi Variabel Squared Return (Volatilitas) sebelum standardisasi:")
+Y_log = np.log(Y + 1e-10)  # epsilon kecil mencegah log(0)
+print("Skewness sebelum log-transform:", skew(Y, axis=0))
+print("Skewness sesudah log-transform:", skew(Y_log, axis=0))
+# Standarisasi data menggunakan log-transformed data
+Y_std = (Y_log - np.mean(Y_log, axis=0)) / np.std(Y_log, axis=0)
+```
+Transform code snippet found:
+```python
+- $\kappa$: Forgetting factor untuk measurement error covariance (volatilitas). Biasanya 0.96.
+```
+Transform code snippet found:
+```python
+plt.title('Dynamic Total Volatility Spillover Index (Antonakakis et al. 2020)', fontsize=14, pad=15)
+```
+Transform code snippet found:
+```python
+plt.title('Average Pairwise Volatility Spillover Matrix', pad=15)
+```
+tvp_tsi mean: 38.7415
+spillover_ai_to_btcidr mean: 9.0009
+net_spill_saham_nvda mean: -2.3200
+net_spill_saham_msft mean: -2.3376
+net_spill_saham_tsla mean: -4.7612
+net_spill_saham_googl mean: -3.4210
+net_spill_saham_meta mean: -4.0132
+net_spill_crypto_btc_usd mean: 11.7985
+net_spill_crypto_eth_usd mean: -0.4001
+net_spill_crypto_btc_idr_indodax mean: 5.4546
+
+## 3. Konfigurasi & reproducibility v4
+Exog Cols Snippet:
+exog_cols = [
+    'ret_saham_nvda', 'ret_saham_msft', 'ret_saham_tsla', 'ret_saham_googl', 'ret_saham_meta',
+    'ret_crypto_btc_usd', 'ret_crypto_eth_usd', 'crypto_btc_usd_weekend_return',
+    'spillover_ai_to_btcidr', 'tvp_tsi',
+    'net_spill_saham_nvda', 'net_spill_saham_msft', 'net_spill_saham_tsla', 'net_spill_saham_googl', 'net_spill_saham_meta',
+    'net_spill_crypto_btc_usd', 'net_spill_crypto_eth_usd',
+    'gap_days', 'is_monday', 'is_ihsg_holiday'
+]
+Cross validation parameters:
+    cv_df = nf.cross_validation(df=nf_df.drop(columns=['real_date']), n_windows=n_test, step_size=1, val_size=n_val, refit=False)
+TFT Config:     TFT(h=H, input_size=INPUT_SIZE, hist_exog_list=exog_cols, max_steps=MAX_STEPS, val_check_steps=VAL_CHECK_STEPS, early_stop_patience_steps=CHOSEN_PATIENCE, random_seed=SEED, scaler_type='standard'),
+Early Stopping Output:
+Seed set to 42
+Seed set to 42
+Seed set to 42
+Seed set to 42
+Seed set to 42
+Seed set to 42
+Seed set to 42
+
+Early Stopping Output:
+✅ MENDETEKSI FILE /kaggle/working/CV_Predictions_V4.csv SUDAH ADA!
+Melewati proses training ulang... Langsung memuat data ke memori.
+=== STATUS EARLY STOPPING 7 MODEL (V4) ===
+
+Early Stopping Table Output:
+      Model             Status  Stopped_at_Step  Last_Val_Loss  Min_Val_Loss  \
+0       TFT  Max Steps Reached             1999       0.000733      0.000731   
+1      LSTM  Max Steps Reached             1999       0.000739      0.000723   
+2     NHITS  Max Steps Reached             1999       0.001028      0.001012   
+3      TiDE  Max Steps Reached             1999       0.000583      0.000582   
+4   NBEATSx  Max Steps Reached             1999       0.001002      0.000979   
+5  TSMixerx  Max Steps Reached             1999       0.000730      0.000672   
+6       KAN  Max Steps Reached             1999       0.000693      0.000693   
+
+   Min_Val_Step  
+0          1399  
+1            49  
+2           149  
+3           599  
+4            99  
+5           199  
+6          1999  
+
+## 4. Prediksi & 5. Metrik
+CV_Predictions shape: (3350, 12)
+Columns: unique_id, ds, cutoff, TFT, LSTM, NHITS, TiDE, NBEATSx, TSMixerx, KAN, y, real_date
+Cutoff dates count: 335
+
+--- Metrics for h=1 ---
+TFT: R2=-0.4334, RMSE=0.001843, DirAcc=67.37%, Pred_Std=0.000986, Y_Std=0.001539
+LSTM: R2=-0.1157, RMSE=0.001626, DirAcc=67.96%, Pred_Std=0.000542, Y_Std=0.001539
+NHITS: R2=-0.2578, RMSE=0.001726, DirAcc=54.19%, Pred_Std=0.001314, Y_Std=0.001539
+TiDE: R2=-0.0565, RMSE=0.001582, DirAcc=70.96%, Pred_Std=0.000129, Y_Std=0.001539
+NBEATSx: R2=-0.3406, RMSE=0.001782, DirAcc=52.99%, Pred_Std=0.001450, Y_Std=0.001539
+TSMixerx: R2=-0.3439, RMSE=0.001784, DirAcc=68.56%, Pred_Std=0.000914, Y_Std=0.001539
+KAN: R2=-0.1146, RMSE=0.001625, DirAcc=71.26%, Pred_Std=0.000433, Y_Std=0.001539
+
+--- Metrics for h=10 ---
+TFT: R2=-0.3085, RMSE=0.001762, DirAcc=64.37%, Pred_Std=0.000829, Y_Std=0.001540
+LSTM: R2=-0.1450, RMSE=0.001648, DirAcc=71.26%, Pred_Std=0.000598, Y_Std=0.001540
+NHITS: R2=-0.8501, RMSE=0.002095, DirAcc=63.77%, Pred_Std=0.001428, Y_Std=0.001540
+TiDE: R2=-0.0498, RMSE=0.001578, DirAcc=70.66%, Pred_Std=0.000122, Y_Std=0.001540
+NBEATSx: R2=-0.9004, RMSE=0.002124, DirAcc=60.48%, Pred_Std=0.001492, Y_Std=0.001540
+TSMixerx: R2=-0.1722, RMSE=0.001668, DirAcc=68.86%, Pred_Std=0.000585, Y_Std=0.001540
+KAN: R2=-0.0902, RMSE=0.001608, DirAcc=71.56%, Pred_Std=0.000426, Y_Std=0.001540
+
+## 6. Diebold-Mariano Test (h=1)
+DM TFT vs Persistence: stat=-0.6444, pval=0.519319
+DM TFT vs Historical Mean: stat=-1.0657, pval=0.286564
+DM LSTM vs Persistence: stat=0.3219, pval=0.747496
+DM LSTM vs Historical Mean: stat=1.2566, pval=0.208907
+DM NHITS vs Persistence: stat=-0.3253, pval=0.744975
+DM NHITS vs Historical Mean: stat=-0.2005, pval=0.841091
+DM TiDE vs Persistence: stat=0.5225, pval=0.601356
+DM TiDE vs Historical Mean: stat=2.0720, pval=0.038270
+DM NBEATSx vs Persistence: stat=-0.6668, pval=0.504924
+DM NBEATSx vs Historical Mean: stat=-0.4919, pval=0.622815
+DM TSMixerx vs Persistence: stat=-0.4571, pval=0.647565
+DM TSMixerx vs Historical Mean: stat=-0.9663, pval=0.333896
+DM KAN vs Persistence: stat=0.3133, pval=0.754068
+DM KAN vs Historical Mean: stat=1.0743, pval=0.282709
+
+## 8. Feature Importance TFT
+TFT_Mean_Importance_V4 shape: (20, 2)
+Top 3 features: [['net_spill_saham_tsla', 0.149298], ['ret_saham_nvda', 0.07364], ['net_spill_crypto_btc_usd', 0.071145]]

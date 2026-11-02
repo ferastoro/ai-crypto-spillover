@@ -1,0 +1,130 @@
+======================================================================
+CHECKPOINT 3a - BAGIAN A: PROVENANCE
+======================================================================
+
+--- A.1. PROVENANCE FILE & NOTEBOOK ---
+File: /Users/admin/Developer/coding_backup/SEM 5/RSIC/data/clean/tvp_var_dynamic_features.csv
+  MD5: fe1753364abcfb670d1362e4e9b30fb8
+  Jumlah baris: 1555
+  Tanggal min: 2020-01-06
+  Tanggal max: 2026-09-04
+File: /Users/admin/Developer/coding_backup/SEM 5/RSIC/data/clean/dataset_deep_learning.csv
+  MD5: ba64297407f9d8221488b4815a12ce8c
+  Jumlah baris: 1677
+  Tanggal min: 2020-01-03
+  Tanggal max: 2026-09-04
+File: /Users/admin/Developer/coding_backup/SEM 5/RSIC/data/clean/target_alternatives.csv
+  MD5: bf8aacacd315c6a28a68bbaa7ec9e777
+  Jumlah baris: 1677
+  Tanggal min: 2020-01-03
+  Tanggal max: 2026-09-04
+Notebook: /Users/admin/Developer/coding_backup/SEM 5/RSIC/notebooks/02_tvp_var_spillover.ipynb
+  MD5: 5e66dee1b88c601eda60316f67e8e4eb
+  Total cells: 21
+  Cells dengan output: 10
+  Status tersimpan output: True
+
+--- A.2. END_DATE DI collect_data.py ---
+File: /Users/admin/Developer/coding_backup/SEM 5/RSIC/src/collect_data.py | Nomor baris: 50 | Kode: END_DATE = "2026-09-05"
+
+--- A.3. PEMBENTUKAN Y DAN Z-SCORE ---
+Nomor cell: Cell 3
+Kode persis Cell 3:
+data_path = os.path.join(CLEAN_DATA_DIR, 'dataset_garch_baseline.csv')
+df = pd.read_csv(data_path)
+
+# Variabel inti untuk Spillover Index (8 variabel)
+core_vars = [
+    'ret_saham_nvda', 'ret_saham_msft', 'ret_saham_tsla', 'ret_saham_googl', 'ret_saham_meta', 
+    'ret_crypto_btc_usd', 'ret_crypto_eth_usd', 'ret_crypto_btc_idr_indodax'
+]
+
+# Robustness vars (tidak dimasukkan di TVP-VAR inti untuk menghindari dimensionality issues)
+robustness_vars = ['ret_konteks_ihsg', 'ret_konteks_vix', 'ret_konteks_usdidr']
+
+dates = pd.to_datetime(df['Date'])
+Y = (df[core_vars] ** 2).values
+
+print("Jumlah nilai 0 per kolom:", (Y == 0).sum(axis=0))
+print("Std per kolom:", np.std(Y, axis=0))
+
+# Cek distribusi squared return (diharapkan right-skewed) sebelum standardisasi
+print("Distribusi Variabel Squared Return (Volatilitas) sebelum standardisasi:")
+print(pd.DataFrame(Y, columns=core_vars).describe())
+
+from scipy.stats import skew
+Y_log = np.log(Y + 1e-10)  # epsilon kecil mencegah log(0)
+print("Skewness sebelum log-transform:", skew(Y, axis=0))
+print("Skewness sesudah log-transform:", skew(Y_log, axis=0))
+
+# Standarisasi data menggunakan log-transformed data
+Y_std = (Y_log - np.mean(Y_log, axis=0)) / np.std(Y_log, axis=0)
+
+print(f"Data loaded. Y shape: {Y.shape} (Dates: {len(dates)})")
+
+Ruang lingkup standardisasi: Seluruh sampel (full sample / static), bukan expanding, bukan rolling.
+Nilai mean dan std per kolom yang dipakai (Y_log = log(r^2 + 1e-10)):
+Variabel                         | Mean         | Std         
+--------------------------------------------------------------
+ret_saham_nvda                   | -8.375592    | 2.311572    
+ret_saham_msft                   | -9.658476    | 2.450406    
+ret_saham_tsla                   | -8.071448    | 2.440643    
+ret_saham_googl                  | -9.383350    | 2.324537    
+ret_saham_meta                   | -9.000033    | 2.347323    
+ret_crypto_btc_usd               | -8.397017    | 2.452149    
+ret_crypto_eth_usd               | -7.823525    | 2.505812    
+ret_crypto_btc_idr_indodax       | -8.782585    | 2.734224    
+
+--- A.4. DEFINISI PERSIS KOLOM FITUR ---
+1. tvp_tsi (Cell 10 & Cell 19):
+   Cell 10:
+   off_diag_sum = gfevd_hist[t].sum() - np.trace(gfevd_hist[t])
+   tsi[t] = (off_diag_sum / M) * 100
+   Cell 19:
+   df_dynamic["tvp_tsi"] = tsi
+
+2. net_spill_* (Cell 10 & Cell 19):
+   Cell 10:
+   dir_from[t, i] = (np.sum(gfevd_hist[t, i, :]) - gfevd_hist[t, i, i]) * 100
+   dir_to[t, i] = (np.sum(gfevd_hist[t, :, i]) - gfevd_hist[t, i, i]) * 100
+   net_spill = dir_to - dir_from
+   Cell 19:
+   for i, var in enumerate(core_vars):
+       col_name = var.replace("ret_", "net_spill_")
+       df_dynamic[col_name] = net_spill[:, i]
+
+3. spillover_ai_to_btcidr (Cell 19):
+   idx_btcidr = 7
+   spill_ai_to_btc = np.sum(gfevd_hist[:, idx_btcidr, 0:5], axis=1) * 100
+   df_dynamic["spillover_ai_to_btcidr"] = spill_ai_to_btc
+
+--- A.5. ANALISIS 121 BARIS FFILL DI df_har ---
+Jumlah baris df_har: 1676
+Jumlah baris hasil ffill TVP: 121
+Daftar tanggal pertama 10 hasil ffill:
+  2020-03-25
+  2020-05-01
+  2020-05-07
+  2020-05-21
+  2020-05-22
+  2020-06-01
+  2020-07-31
+  2020-08-17
+  2020-08-20
+  2020-08-21
+Daftar tanggal terakhir 10 hasil ffill:
+  2026-03-24
+  2026-05-01
+  2026-05-14
+  2026-05-15
+  2026-05-27
+  2026-05-28
+  2026-06-01
+  2026-06-16
+  2026-08-17
+  2026-08-25
+Jumlah baris ffill di awal sampel (< 2020-01-06): 0
+Jumlah baris ffill di tengah sampel (2020-01-06 s.d. 2026-09-04): 121
+Jumlah baris ffill di akhir sampel (> 2026-09-04): 0
+Jumlah hari BTC-IDR return = 0 pada 121 baris ffill: 0
+Jumlah hari BTC-IDR return = 0 pada seluruh baris df_har: 2

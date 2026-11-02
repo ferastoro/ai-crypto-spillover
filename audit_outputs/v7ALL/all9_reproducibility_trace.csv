@@ -1,0 +1,23 @@
+Property,Value
+Target Stage,ALL (A_TUNED then B)
+Execution Timestamp,2026-10-30 08:28:36 UTC
+Compute Hardware,Tesla T4 (CUDA=True)
+Python Version,3.13.12
+NeuralForecast Version,3.3.0
+arch Version,8.0.0
+Random Seeds Evaluated,"[42, 7, 13, 21, 99]"
+Cutoffs Count,335
+Horizons Count,10
+A_TUNED Tuning Fits Count,40 (NBEATSx 12x2 + TFT 8x2)
+A_TUNED Final Fits Count,20 (4 configs x 5 seeds)
+Exp B Refit Fits Count,24 (4 configs x 6 blocks)
+Total Executed Fits,84 (40 tuning + 44 production)
+Stage A_TUNED Runtime,1238.14 seconds (20.64 minutes)
+Stage B Runtime,700.43 seconds (11.67 minutes)
+Total Runtime,0.55 hours (Budget limit: 10.0 hours)
+v7_results.zip MD5,8b1ff9ec47fc08681da102fcd1d51c00
+v7_ensemble_predictions.csv MD5,d3638a4ad783b6166770288aea899cc6
+a_tuned_grid_evaluation.csv MD5,aa84c88ecb69bf229b5802cbef792ffc
+run_log.csv MD5,8c111a3bd06b2cf409c8cbed66f88be0
+Downloaded Kaggle Notebook MD5,b898f4eff17be677ca07652bb7528263
+Repo Notebook MD5,b898f4eff17be677ca07652bb7528263

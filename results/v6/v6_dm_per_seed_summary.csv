@@ -1,0 +1,25 @@
+Model,FeatureSet,Horizon,Benchmark,n_seeds_outperform_p_raw_005,total_seeds,ratio_str
+NBEATSx,NOSPILL,h=1,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+NBEATSx,NOSPILL,h=1,"Hist_Exp (DL-base, MSE=2.689570e-06)",1,5,1 / 5
+NBEATSx,NOSPILL,h=1,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+NBEATSx,NOSPILL,h=10,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+NBEATSx,NOSPILL,h=10,"Hist_Exp (DL-base, MSE=2.689570e-06)",0,5,0 / 5
+NBEATSx,NOSPILL,h=10,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=1,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=1,"Hist_Exp (DL-base, MSE=2.689570e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=1,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=10,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=10,"Hist_Exp (DL-base, MSE=2.689570e-06)",0,5,0 / 5
+NBEATSx,SPILL,h=10,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+TFT,NOSPILL,h=1,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+TFT,NOSPILL,h=1,"Hist_Exp (DL-base, MSE=2.689570e-06)",3,5,3 / 5
+TFT,NOSPILL,h=1,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+TFT,NOSPILL,h=10,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+TFT,NOSPILL,h=10,"Hist_Exp (DL-base, MSE=2.689570e-06)",1,5,1 / 5
+TFT,NOSPILL,h=10,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+TFT,SPILL,h=1,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+TFT,SPILL,h=1,"Hist_Exp (DL-base, MSE=2.689570e-06)",3,5,3 / 5
+TFT,SPILL,h=1,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5
+TFT,SPILL,h=10,"HAR (v2, MSE=2.234681e-06)",0,5,0 / 5
+TFT,SPILL,h=10,"Hist_Exp (DL-base, MSE=2.689570e-06)",1,5,1 / 5
+TFT,SPILL,h=10,"Roll_20 (DL-base, MSE=2.407078e-06)",0,5,0 / 5

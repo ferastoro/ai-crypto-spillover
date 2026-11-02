@@ -1,0 +1,4 @@
+Model,R2_Total_Cutoffs,Outlier_Days_Count,R2_Total_Sum_Squared_Error,Outlier_Days_Sum_Squared_Error,Share_of_R2_Squared_Error (%),R2_MSE_Full,R2_MSE_Dropped_Outliers,MSE_Reduction_Without_Outliers (%)
+HAR,197,2,7.023817e-04,5.703031e-04,81.20%,3.565389e-06,6.773261e-07,81.00%
+TFT-SPILL,197,2,7.551944e-04,6.294842e-04,83.35%,3.833474e-06,6.446679e-07,83.18%
+NBEATSx-SPILL,197,2,6.897184e-04,5.238722e-04,75.95%,3.501109e-06,8.504933e-07,75.71%

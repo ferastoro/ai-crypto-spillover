@@ -1,0 +1,7 @@
+Concept,Row_Count,Units,Matches_2437,Description
+Study Sample Calendar Span (2020-01-03 to 2026-09-04),2437,Calendar Days (Dates),YES - EXACT MATCH,Total elapsed calendar days from first US trading day to last day in dataset
+Equity Non-Trading Days (Calendar Gap Days),760,Calendar Days (Weekends + US Holidays),"Part of 2,437 (760 / 2437 = 31.19%)","Cited as exactly 760 of 2,437 days (31.2%) in data.tex"
+Stage 2 Deep Learning Dataset (dataset_deep_learning.csv),1677,Trading Days (Returns),"No (N=1,677)",Full US equity trading days without dropping Indonesian holidays
+Stage 1 TVP-VAR Dataset (dataset_garch_baseline.csv),1556,Trading Days (Returns),"No (N=1,556)",Trading days with 121 Indonesian market holidays dropped
+Raw 24/7 Cryptocurrency Price Rows (crypto_btc_usd.csv),2440,Price Observations (Daily),"No (N=2,440)",Raw yfinance crypto rows spanning 2020-01-01 to 2026-09-05
+Raw US Equity Price Rows (saham_nvda.csv),1678,Price Observations (Trading Days),"No (N=1,678)",Raw yfinance US equity rows from 2020-01-02 to 2026-09-04

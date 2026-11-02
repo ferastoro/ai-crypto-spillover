@@ -1,0 +1,7 @@
+Component,Expected_Count,Actual_Count,Missing_Count,Status
+Experiment A Partials,20,4,16,FAIL (Only seed 42 present)
+Experiment B Partials,24,4,20,FAIL (Only block 1 present)
+Experiment B Full Concat,4,4,0,"FAIL (Contains only block 1, 30 rows instead of 3350)"
+Ensemble Predictions,1,1,0,FAIL (240 rows instead of 13400; only 3 cutoffs)
+Training Logs Folder,1,0,1,FAIL (logs/ not downloaded)
+Notebook File (__notebook__.ipynb),1,0,1,FAIL (Listed in manifest but missing)

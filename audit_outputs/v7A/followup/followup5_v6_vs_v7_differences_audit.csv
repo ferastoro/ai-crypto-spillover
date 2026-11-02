@@ -1,0 +1,10 @@
+Attribute,v6_Value,v7_Value,Status
+Number of Fits per Model,"1 fit (fit called once, cross_validation with use_fitted=True)","1 fit (fit called once, cross_validation with use_fitted=True)",MATCH (No difference; 1 fit per model verified by checksum assertion)
+TFT Loss Function,MSE(),MAE(),INTENDED INTERVENTION (Loss matched to NBEATSx v6)
+N-BEATSx Loss Function,MAE(),MSE(),INTENDED INTERVENTION (Loss matched to TFT v6)
+NeuralForecast Version,3.3.0,3.3.0,MATCH
+Split Definition,1165 train / 167 val / 344 test target (1332 train+val),1165 train / 167 val / 344 test target (1332 train+val),MATCH
+Multi-Seed List,"[42, 7, 13, 21, 99]","[42, 7, 13, 21, 99]",MATCH
+Feature Sets,"NOSPILL (11 exog), SPILL (20 exog causal)","NOSPILL (11 exog), SPILL (20 exog causal)",MATCH
+RestoreBestWeights Callback,Custom Callback restoring best state_dict upon train_end,Custom Callback restoring best state_dict upon train_end,MATCH
+Early Stopping Optimization State,TFT best step 25-50; NBEATSx best step 50,"TFT best step 50-75; NBEATSx best step 25 (first check, failed to optimize under MSE)",OPTIMIZATION FAILURE (N-BEATSx diverged after Step 25 under MSE loss)

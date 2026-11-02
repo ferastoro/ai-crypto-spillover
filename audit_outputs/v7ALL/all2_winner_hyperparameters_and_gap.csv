@@ -1,0 +1,3 @@
+Model,Winner_Combo_ID,Winner_Input_Size,Winner_LR,Winner_Loss,Winner_Val_MSE,Winner_Ratio,Winner_Grid_Position,Best_Interior_Combo_ID,Best_Interior_Val_MSE,Gap_Interior_minus_Winner,Gap_Percentage (%),Boundary_Warning
+NBEATSx,NBEATSx_tuned_cfg8,50,0.0001,MSE,2.575002781668445e-06,1.0997679796187465,EDGE,NBEATSx_tuned_cfg7,2.6447557956998935e-06,6.97530140314484e-08,2.6374084951381818,YES: Winner is on grid boundary!
+TFT,TFT_tuned_cfg6,50,0.00075,MAE,1.6517217318323674e-06,0.382428077834095,EDGE,None (All combos on boundary),,,,YES: Winner is on grid boundary!

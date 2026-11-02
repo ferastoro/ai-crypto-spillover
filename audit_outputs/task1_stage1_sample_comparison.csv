@@ -1,0 +1,12 @@
+Category,Metric_or_Asset,Baseline_N1556,FullSample_N1677,Difference (pp),Sign_Flip,Note
+System Spillover,TSI Mean (%),38.7415,37.3886,-1.3529,No,Decreases slightly by -1.35 pp due to adding 121 Indonesian holidays
+System Spillover,TSI Min (%),21.8882,19.6233,-2.2649,No,Minimum connectedness remains ~20%
+System Spillover,TSI Max (%),88.9646,90.0138,1.0492,No,Peak connectedness remains ~89-90%
+Net Spillover,Net_SAHAM_NVDA (%),-2.32,-0.1395,2.1804,No,Retains original role (Receiver)
+Net Spillover,Net_SAHAM_MSFT (%),-2.3376,-3.1308,-0.7932,No,Retains original role (Receiver)
+Net Spillover,Net_SAHAM_TSLA (%),-4.7612,-2.3403,2.4209,No,Retains original role (Receiver)
+Net Spillover,Net_SAHAM_GOOGL (%),-3.421,-3.3597,0.0613,No,Retains original role (Receiver)
+Net Spillover,Net_SAHAM_META (%),-4.0132,-3.103,0.9101,No,Retains original role (Receiver)
+Net Spillover,Net_CRYPTO_BTC_USD (%),11.7985,9.0619,-2.7366,No,Retains original role (Transmitter)
+Net Spillover,Net_CRYPTO_ETH_USD (%),-0.4001,-1.8564,-1.4563,No,Retains original role (Receiver)
+Net Spillover,Net_CRYPTO_BTC_IDR_INDODAX (%),5.4546,4.8679,-0.5867,No,Retains original role (Transmitter)

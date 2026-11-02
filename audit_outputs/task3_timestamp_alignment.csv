@@ -1,0 +1,3 @@
+Series,Contemporaneous_Corr_Lag0,CrossCorr_Lag_minus2,CrossCorr_Lag_minus1,CrossCorr_Lag_plus1,CrossCorr_Lag_plus2,TSI_Mean (%),BTC_IDR_Net_Spillover (%),BTC_USD_Net_Spillover (%),Cut_Description
+"Original (Indodax 00:00 UTC cut, verified matching yfinance 00:00 UTC cut)",0.9811,0.0249,-0.0483,-0.0046,0.0476,38.7415,5.4546,11.7985,Both yfinance BTC-USD and Indodax daily history cut at 00:00:00 UTC
+Re-aligned (Simulated US Equity Close cut at 21:00 UTC / 16:00 EST),0.972,0.0177,0.091,0.0021,0.0552,38.6911,3.5755,9.802,Adjusted for 3-hour gap between 21:00 UTC US Close and 00:00 UTC Crypto Cut

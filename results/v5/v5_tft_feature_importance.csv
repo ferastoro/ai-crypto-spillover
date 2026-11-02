@@ -1,0 +1,21 @@
+feature,mean_importance,n_cutoffs,extraction_path,window_represented
+ret_saham_nvda,0.024543308,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_saham_msft,0.019166155,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_saham_tsla,0.021793025,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_saham_googl,0.023566555,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_saham_meta,0.016769495,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_crypto_btc_usd,0.03563063,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+ret_crypto_eth_usd,0.09704836,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+crypto_btc_usd_weekend_return,0.015636962,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+gap_days,0.021222508,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+is_monday,0.042273264,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+is_ihsg_holiday,0.013645526,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+spillover_ai_to_btcidr,0.020342952,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+tvp_tsi,0.16008718,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_saham_nvda,0.03417261,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_saham_msft,0.08252965,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_saham_tsla,0.05509862,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_saham_googl,0.055731673,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_saham_meta,0.031635888,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_crypto_btc_usd,0.11826736,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0
+net_spill_crypto_eth_usd,0.036771763,335,"nf_single.models[0].feature_importances()[""Past variable importance over time""]",historical_lookback_t-29_to_t0

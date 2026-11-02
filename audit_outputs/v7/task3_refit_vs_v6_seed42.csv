@@ -1,0 +1,5 @@
+Config,V7_Cutoffs_Evaluated,V6_Cutoffs_Matched,Max_Abs_Diff,Mean_Abs_Diff,Correlation,Status,Explanation
+TFT_REFIT60_SPILL,3,3,1.864576e-04,1.011600e-04,0.7243,doesn't match,v7 executed in SMOKE mode with max_steps=20 vs v6 max_steps=1000
+TFT_REFIT60_NOSPILL,3,3,2.890448e-04,2.612932e-04,0.8409,doesn't match,v7 executed in SMOKE mode with max_steps=20 vs v6 max_steps=1000
+NBEATSx_REFIT60_SPILL,3,3,4.629954e-04,1.410771e-04,0.4472,doesn't match,v7 executed in SMOKE mode with max_steps=20 vs v6 max_steps=1000
+NBEATSx_REFIT60_NOSPILL,3,3,3.900196e-04,1.334789e-04,0.4494,doesn't match,v7 executed in SMOKE mode with max_steps=20 vs v6 max_steps=1000

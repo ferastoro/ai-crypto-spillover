@@ -1,0 +1,4 @@
+Scenario,NBEATS_Fit_Sec,TFT_Fit_Sec,CV_Sec_335,A_TUNED_Grid_Sec,A_TUNED_Main_Sec,A_TUNED_Total_Hours,Stage_B_Total_Hours,STAGE_ALL_Total_Hours,Within_10h_Budget
+Low (Fast Early Stop),0.8,24.9,11.2,48.8,120.0,0.05,0.1,0.15,True
+Expected (v7-A empirical stop ~100-150 steps),1.7,41.5,11.2,55.4,128.2,0.05,0.16,0.21,True
+High (Slow Convergence ~300 steps),5.0,99.6,11.2,81.9,161.4,0.07,0.36,0.43,True

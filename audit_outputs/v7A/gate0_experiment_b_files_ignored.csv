@@ -1,0 +1,10 @@
+File,Type,Rows,Cutoffs,Action
+v7_expB_full_NBEATSx_REFIT60_NOSPILL.csv,Experiment B Concatenated,30,3,Ignored in Experiment A audit
+v7_expB_full_NBEATSx_REFIT60_SPILL.csv,Experiment B Concatenated,30,3,Ignored in Experiment A audit
+v7_expB_full_TFT_REFIT60_NOSPILL.csv,Experiment B Concatenated,30,3,Ignored in Experiment A audit
+v7_expB_full_TFT_REFIT60_SPILL.csv,Experiment B Concatenated,30,3,Ignored in Experiment A audit
+v7_expB_partial_NBEATSx_REFIT60_NOSPILL_block1.csv,Experiment B Partial (Block 1),30,3,Ignored in Experiment A audit
+v7_expB_partial_NBEATSx_REFIT60_SPILL_block1.csv,Experiment B Partial (Block 1),30,3,Ignored in Experiment A audit
+v7_expB_partial_TFT_REFIT60_NOSPILL_block1.csv,Experiment B Partial (Block 1),30,3,Ignored in Experiment A audit
+v7_expB_partial_TFT_REFIT60_SPILL_block1.csv,Experiment B Partial (Block 1),30,3,Ignored in Experiment A audit
+

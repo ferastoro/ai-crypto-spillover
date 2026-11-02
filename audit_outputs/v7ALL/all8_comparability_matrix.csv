@@ -1,0 +1,8 @@
+Dimension,v6 (Multiseed Fixed T0),v7-a (Untuned Loss Swap),v7-tuned (STAGE=ALL: A_TUNED + B)
+Primary Objective,5-seed evaluation of v4 winners under fixed T0,Loss-matched retrain using v6 default hyperparameters,Grid tuning under loss-matched objectives + 60-day periodic refitting
+NBEATSx Loss & Grid,"MAE loss; Grid: {20, 50} x {3e-4, 1e-3} (4 combos)","MSE loss; Fixed: input=20, lr=3e-4 (v6 cfg3 params)","MSE loss; Grid: {20, 50, 100} x {1e-3, 5e-4, 3e-4, 1e-4} (12 combos)"
+TFT Loss & Grid,"MSE loss; Grid: {20, 50} x {3e-4, 1e-3} (4 combos)","MAE loss; Fixed: input=50, lr=1e-3 (v6 cfg5 params)","MAE loss; Grid: {20, 50} x {1e-3, 7.5e-4, 5e-4, 3e-4} (8 combos)"
+Validation Check Steps & Patience,"val_check_steps=25, patience=5 checks (125 steps)","val_check_steps=25, patience=5 checks (125 steps)","NBEATSx: val_check_steps=5, patience=25 checks (125 steps); TFT: val_check_steps=25, patience=5"
+Tuning Ranking Metric,Mean validation MSE across seeds 42 and 7 (h=1 and h=10),None (No tuning performed),Mean validation MSE across seeds 42 and 7 (h=1 and h=10)
+Periodic Refitting (Exp B),"None (Single fit at T0, expanded window)","None (Single fit at T0, expanded window)","60-day periodic refit (6 blocks covering 335 cutoffs, re-initialized weights)"
+QLIKE Evaluation Rules,Floored at 1e-6 (historical v6 clipping rule for negative forecasts),Floored at 1e-8 (produced 8205.70 for negative NBEATSx),"Triple reporting: Common Positive (N=244/249), Floored 1e-6, Floored 1e-8"

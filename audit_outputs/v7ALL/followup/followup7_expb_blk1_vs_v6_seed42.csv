@@ -1,0 +1,5 @@
+Model_Config,Comparison_Type,Cutoffs_Count,Total_Forecasts,Max_Absolute_Diff,Mean_Absolute_Diff,Pearson_Correlation,Expected_Nondeterminism
+TFT_MSE_SPILL,ExpB_Block1_vs_v6_Seed42,60,600,0.00110397156,0.0003200721737,0.6093416750084725,Expected (CUDA/PyTorch nondeterminism across environments)
+TFT_MSE_NOSPILL,ExpB_Block1_vs_v6_Seed42,60,600,0.0003743907000000001,0.0001239589676,0.8226941088670594,Expected (CUDA/PyTorch nondeterminism across environments)
+NBEATSx_MAE_SPILL,ExpB_Block1_vs_v6_Seed42,60,600,0.00201185425,0.0002913081884054666,0.02212308467868206,Expected (CUDA/PyTorch nondeterminism across environments)
+NBEATSx_MAE_NOSPILL,ExpB_Block1_vs_v6_Seed42,60,600,0.0012696403699999999,0.00025042205371752504,-0.18456211683125612,Expected (CUDA/PyTorch nondeterminism across environments)

@@ -1,0 +1,14 @@
+v5s_dm_table.csv                     | Size: 4275       | MD5: f08219fc260bc4cc64e519da371624c1
+v5s_es_log.csv                       | Size: 252        | MD5: fe650a7ec0f27e3504649a3857ddd8ea
+v5s_metrics_table.csv                | Size: 3844       | MD5: c411f51ef70eb9305ead0484bdf13aa0
+v5s_outputs.zip                      | Size: 210421     | MD5: 449eb1b322f9df310bb149ff3a113b3a
+v5s_partial_NBEATSx_NOSPILL_T0_100e5e73.csv | Size: 228380     | MD5: a5c80c9977d59524646122cf8d9da2c8
+v5s_partial_NBEATSx_SPILL_T0_98a23b00.csv | Size: 228477     | MD5: 5306c060d8ca306d7176e6fd02bb0b94
+v5s_partial_TFT_NOSPILL_T0_957592e5.csv | Size: 228308     | MD5: a8f4400b3e2fb8f8cb0b451bba7ef16c
+v5s_partial_TFT_SPILL_T0_2cd48e18.csv | Size: 228560     | MD5: 350bf118c1eb3309eb06f0b174b89f8e
+v5s_pip_freeze.txt                   | Size: 18131      | MD5: fbba8adec4ca6b368bae913e20fcf2c3
+v5s_tft_feature_importance.csv       | Size: 3188       | MD5: 0f3cad9af4cec33d943de883a6602d12
+v5s_valcurve_NBEATSx_NOSPILL.csv     | Size: 36706      | MD5: 6e1f1e26eadc6f097318d40b6fdc7238
+v5s_valcurve_NBEATSx_SPILL.csv       | Size: 38430      | MD5: 079e1f0905e0fc276b6c978edb19d03f
+v5s_valcurve_TFT_NOSPILL.csv         | Size: 37540      | MD5: d92fba7d80fef5b3abeab546ca6b0d82
+v5s_valcurve_TFT_SPILL.csv           | Size: 36664      | MD5: 115e8e56bc57a1c15d81927bfb377074

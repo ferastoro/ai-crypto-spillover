@@ -1,0 +1,12 @@
+Log_File,Total_Checks,First_Step,Final_Step,Best_Step,Best_Val_Loss,Train_Loss_Best_Step
+logs/val_curve_NBEATSx_MAE_NOSPILL_blk1.csv,2,,,,,
+logs/val_curve_NBEATSx_MAE_SPILL_blk1.csv,2,,,,,
+logs/val_curve_NBEATSx_MSE_NOSPILL_s42.csv,2,,,,,
+logs/val_curve_NBEATSx_MSE_SPILL_s42.csv,2,,,,,
+logs/val_curve_NBEATSx_MSEtuned_NOSPILL_s42.csv,2,,,,,
+logs/val_curve_NBEATSx_MSEtuned_SPILL_s42.csv,2,,,,,
+logs/val_curve_TFT_MAE_NOSPILL_s42.csv,2,,,,,
+logs/val_curve_TFT_MAE_SPILL_s42.csv,2,,,,,
+logs/val_curve_TFT_MSE_NOSPILL_blk1.csv,2,,,,,
+logs/val_curve_TFT_MSE_SPILL_blk1.csv,2,,,,,
+logs/val_curve_tuning_NBEATSx_tuned_cfg1.csv,2,,,,,

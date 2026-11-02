@@ -1,0 +1,19 @@
+Source,Model_Config,Horizon,N_Cutoffs,MSE,MAE,R2_OOS_HistExp,QLIKE,Pct_NonPositive
+Full Benchmark / v6 (N=335 Cutoffs),HAR,h=1,335,2.234681e-06,0.000672,0.1691,1.702,0.0
+Full Benchmark / v6 (N=335 Cutoffs),Hist-Exp,h=1,335,2.689342e-06,0.000967,0.0,1.9694,0.0
+Full Benchmark / v6 (N=335 Cutoffs),Roll-20,h=1,335,2.407078e-06,0.000567,0.105,1.7475,0.0
+Full Benchmark / v6 (N=335 Cutoffs),"GARCH(1,1)",h=1,335,2.313042e-06,0.000650,0.1399,1.6537,0.0
+Full Benchmark / v6 (N=335 Cutoffs),"EGARCH(1,1)",h=1,335,2.257117e-06,0.000648,0.1607,1.6406,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_TFT_SPILL_T0,h=1,335,2.388453e-06,0.000569,0.1119,1.7738,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_TFT_NOSPILL_T0,h=1,335,2.394793e-06,0.000578,0.1095,1.7705,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_NBEATSx_SPILL_T0,h=1,335,2.272067e-06,0.000551,0.1552,,13.73
+Full Benchmark / v6 (N=335 Cutoffs),v6_NBEATSx_NOSPILL_T0,h=1,335,2.505267e-06,0.000521,0.0684,,6.27
+Full Benchmark / v6 (N=335 Cutoffs),HAR,h=10,335,2.439743e-06,0.000719,0.0917,1.7992,0.0
+Full Benchmark / v6 (N=335 Cutoffs),Hist-Exp,h=10,335,2.686052e-06,0.000964,0.0,1.9434,0.0
+Full Benchmark / v6 (N=335 Cutoffs),Roll-20,h=10,335,2.555697e-06,0.000587,0.0485,2.0094,0.0
+Full Benchmark / v6 (N=335 Cutoffs),"GARCH(1,1)",h=10,335,2.478223e-06,0.000716,0.0774,1.796,0.0
+Full Benchmark / v6 (N=335 Cutoffs),"EGARCH(1,1)",h=10,335,2.496371e-06,0.000779,0.0706,1.8275,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_TFT_SPILL_T0,h=10,335,2.447095e-06,0.000601,0.089,1.8032,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_TFT_NOSPILL_T0,h=10,335,2.454033e-06,0.000621,0.0864,1.7844,0.0
+Full Benchmark / v6 (N=335 Cutoffs),v6_NBEATSx_SPILL_T0,h=10,335,2.744505e-06,0.000598,-0.0218,,12.54
+Full Benchmark / v6 (N=335 Cutoffs),v6_NBEATSx_NOSPILL_T0,h=10,335,2.531934e-06,0.000535,0.0574,,5.97
