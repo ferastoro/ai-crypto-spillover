@@ -3,7 +3,8 @@
 # ==============================================================================
 
 # Private manuscripts and reports (distributed separately)
-paper/
+paper-conference/
+paper-sinta/
 report/
 
 # Temporary workspace & scratch scripts
@@ -53,5 +54,6 @@ Thumbs.db
 
 # Third-party paper PDFs in references/
 references/*.pdf
-papers/*.pdf
+paper-conference/*.pdf
+paper-sinta/*.pdf
 data/raw/

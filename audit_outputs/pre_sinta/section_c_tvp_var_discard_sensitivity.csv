@@ -1,0 +1,4 @@
+Discard_First_N_Rows,Remaining_Observations,Effective_Date_Range,TSI_Mean (%),TSI_Min (%),TSI_Max (%),March_2020_Max_TSI (%),March_2020_Spike_Persists,BTC_IDR_Net_Spillover (%),BTC_IDR_Net_Sign,Sign_Flip
+0,1555,2020-01-06 to 2026-09-04,38.7415,21.8882,88.9646,59.4451,Yes (Peak 59.45%),5.4546,+,No (Remains Positive Net Transmitter)
+120,1435,2020-07-07 to 2026-09-04,37.3466,21.8882,60.5867,Dropped (Prior to sample),No (Dates discarded from sample),4.0626,+,No (Remains Positive Net Transmitter)
+250,1305,2021-01-26 to 2026-09-04,36.9822,21.8882,60.5867,Dropped (Prior to sample),No (Dates discarded from sample),3.4052,+,No (Remains Positive Net Transmitter)

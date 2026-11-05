@@ -1,0 +1,11 @@
+Sample,Lag_k,Relationship,Correlation
+"Stage 1 Joint Trading Sample (N=1,556)",-2,"corr(BTC_USD_{t+2}, BTC_IDR_t)",0.024868
+"Stage 1 Joint Trading Sample (N=1,556)",-1,"corr(BTC_USD_{t+1}, BTC_IDR_t)",-0.048346
+"Stage 1 Joint Trading Sample (N=1,556)",0,"corr(BTC_USD_t, BTC_IDR_{t+0})",0.981106
+"Stage 1 Joint Trading Sample (N=1,556)",1,"corr(BTC_USD_t, BTC_IDR_{t+1})",-0.004578
+"Stage 1 Joint Trading Sample (N=1,556)",2,"corr(BTC_USD_t, BTC_IDR_{t+2})",0.04759
+"Raw 24/7 Calendar Sample (N=2,439)",-2,"corr(BTC_USD_{t+2}, BTC_IDR_t)",0.049469
+"Raw 24/7 Calendar Sample (N=2,439)",-1,"corr(BTC_USD_{t+1}, BTC_IDR_t)",-0.054989
+"Raw 24/7 Calendar Sample (N=2,439)",0,"corr(BTC_USD_t, BTC_IDR_{t+0})",0.975803
+"Raw 24/7 Calendar Sample (N=2,439)",1,"corr(BTC_USD_t, BTC_IDR_{t+1})",-0.015964
+"Raw 24/7 Calendar Sample (N=2,439)",2,"corr(BTC_USD_t, BTC_IDR_{t+2})",0.073558

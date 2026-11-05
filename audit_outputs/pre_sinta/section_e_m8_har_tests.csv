@@ -1,0 +1,9 @@
+Target_Proxy,Target_Description,Horizon,Model,Benchmark,DM_Stat,p_raw,m_family,p_bonf,Winner,In_Draft_Table
+r^2 (T0),Target Realized Squared Log-Returns (Daily Close-to-Close),h=1,HAR,Hist_Exp,-3.0651,0.0022,8,0.0174,HAR,Yes (Table IV Panel A)
+r^2 (T0),Target Realized Squared Log-Returns (Daily Close-to-Close),h=1,HAR,Roll_20,-1.4992,0.1338,8,1.0,Tie,Yes (Table IV Panel A)
+r^2 (T0),Target Realized Squared Log-Returns (Daily Close-to-Close),h=10,HAR,Hist_Exp,-2.6871,0.0072,8,0.0577,Tie,Yes (Table IV Panel A)
+r^2 (T0),Target Realized Squared Log-Returns (Daily Close-to-Close),h=10,HAR,Roll_20,-0.9228,0.3561,8,1.0,Tie,Yes (Table IV Panel A)
+Parkinson (T2),Target Parkinson Volatility (Intraday High-Low Range),h=1,HAR,Hist_Exp,-6.5962,0.0,8,0.0,HAR,No (Omitted from draft table)
+Parkinson (T2),Target Parkinson Volatility (Intraday High-Low Range),h=1,HAR,Roll_20,-1.4028,0.1607,8,1.0,Tie,No (Omitted from draft table)
+Parkinson (T2),Target Parkinson Volatility (Intraday High-Low Range),h=10,HAR,Hist_Exp,-3.2233,0.0013,8,0.0101,HAR,No (Omitted from draft table)
+Parkinson (T2),Target Parkinson Volatility (Intraday High-Low Range),h=10,HAR,Roll_20,-0.4672,0.6403,8,1.0,Tie,No (Omitted from draft table)
